@@ -14,7 +14,8 @@ try {
     method: 'POST',
     headers: {
     'Content-Type': 'application/json',
-    'Content-Length': data.length
+    'Content-Length': 0
+    }
   }
 
   https.request(options, (resp) => {
