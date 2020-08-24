@@ -7,7 +7,7 @@ try {
   const expectedStatuses = core.getInput('expected-statuses').split(",").map((status) => Number(status)) ;
   console.log(`Pinging ${urlToHit} and expecting ${expectedStatuses}`);
 
-  https.get(urlToHit, (resp) => {
+  https.post(urlToHit, (resp) => {
     if (!expectedStatuses.includes(resp.statusCode)) {
       core.setFailed(`Request status was ${resp.statusCode}`);
     } else {
